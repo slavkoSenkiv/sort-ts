@@ -4,5 +4,5 @@ console.log(y);
 function logSmth(x) {
     console.log(x);
 }
-const num = 1;
+const num = 123;
 console.log(num);

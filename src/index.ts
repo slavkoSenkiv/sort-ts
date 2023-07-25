@@ -6,5 +6,5 @@ function logSmth(x: string){
     console.log(x);
 }
 
-const num:number = 1
+const num:number = 123
 console.log(num);
