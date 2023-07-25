@@ -1,25 +1,35 @@
 class Sorter {
-    /* 
-    long code alternative to the following code
-    collection: number[];
-    constructor(collection: number[]){
-        this.collection = collection;
-    } */
-    constructor(public collection: number[]){}
-    
-    sort(): void {
-        const { length } = this.collection;
+  /* 
+  long code alternative to the following code
+  collection: number[];
+  constructor(collection: number[]){
+    this.collection = collection;
+  } */
+  constructor(public collection: number[] | string){}
+  
+  sort(): void {
+    const { length } = this.collection;
 
-        for (let i = 0; i < length; i++){
-            for (let j = 0; j < length - i - 1; j++){
-                if (this.collection[j] > this.collection[j + 1]){
-                    const temp = this.collection[j];
-                    this.collection[j] = this.collection[j+1];
-                    this.collection[j+1] = temp;
-                }
-            }
+    for (let i = 0; i < length; i++){
+      for (let j = 0; j < length - i - 1; j++){
+        
+        //if collection is an array of numbers
+        if (this.collection instanceof Array){
+          if (this.collection[j] > this.collection[j + 1]){
+            const leftHand = this.collection[j];
+            this.collection[j] = this.collection[j+1];
+            this.collection[j+1] = leftHand;
+          }
         }
+        
+        //if collection is a string
+        //do this logic instead
+        if(typeof this.collection === 'string'){
+
+        }
+      }
     }
+  }
 }
 
 const sorter = new Sorter([10, 3, -5, 0]);
