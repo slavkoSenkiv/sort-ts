@@ -1,10 +1,14 @@
-export class NumbersCollection{
+import { Sorter } from './Sorter'
+
+export class NumbersCollection extends Sorter{
   /* //long equivalent
   data: number[];
   constructor(data: number[]){
     this.data = data;
   } */
-  constructor(public data: number[]){}
+  constructor(public data: number[]){
+    super();
+  }
 
   get length(){
     return this.data.length;
@@ -19,4 +23,4 @@ export class NumbersCollection{
     this.data[leftIndex] = this.data[rightIndex];
     this.data[rightIndex] = leftHand ;
   }
-}
+} 
